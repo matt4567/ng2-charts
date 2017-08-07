@@ -126,7 +126,7 @@ export class BaseChartDirective implements OnDestroy, OnChanges, OnInit {
   private updateChartData(newDataValues: number[] | any[]): void {
     if (Array.isArray(newDataValues[0].data)) {
       this.chart.data.datasets.forEach((dataset: any, i: number) => {
-        dataset.data = newDataValues[i].data;
+        dataset.data = dataset.data + newDataValues[i].data;
 
         if (newDataValues[i].label) {
           dataset.label = newDataValues[i].label;
